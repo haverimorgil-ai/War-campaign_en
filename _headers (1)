@@ -1,0 +1,2 @@
+/*
+  Content-Security-Policy: default-src 'self' 'unsafe-inline' 'unsafe-eval' https: data:; frame-src 'self' https://www.youtube.com https://youtube.com https://www.youtube-nocookie.com;
