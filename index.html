@@ -173,12 +173,12 @@
                     <div class="mb-6">
                         <label class="block text-slate-700 font-bold mb-3">Choose donation amount:</label>
                         <div class="grid grid-cols-3 gap-3 mb-3">
-                            <button type="button" class="amount-btn" id="btn360">₪360</button>
-                            <button type="button" class="amount-btn active" id="btn720">₪720</button>
-                            <button type="button" class="amount-btn" id="btn1000">₪1,000</button>
+                            <button type="button" class="amount-btn" id="btn360">$360</button>
+                            <button type="button" class="amount-btn active" id="btn720">$720</button>
+                            <button type="button" class="amount-btn" id="btn1000">$1,000</button>
                         </div>
                         <div class="relative">
-                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500 font-bold">₪</span>
+                            <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500 font-bold">$</span>
                             <input type="number" id="customAmount" placeholder="Other amount" min="1" class="w-full border-2 border-slate-200 rounded-lg py-3 pl-10 pr-4 focus:outline-none transition">
                         </div>
                     </div>
@@ -209,7 +209,7 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-envelope" style="color:#dc2626"></i>
-                    <a href="mailto:haverim@haverim.org.il" class="hover:text-white transition">haverim@haverim.org.il</a>
+                    <a href="/cdn-cgi/l/email-protection#4c242d3a293e25210c242d3a293e252162233e2b622520" class="hover:text-white transition"><span class="__cf_email__" data-cfemail="bad2dbccdfc8d3d7fad2dbccdfc8d3d794d5c8dd94d3d6">[email&#160;protected]</span></a>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-globe" style="color:#dc2626"></i>
@@ -222,7 +222,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false">
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false">
     var currentAmount = 720;
 
     function selectAmount(btn, amount) {
@@ -245,20 +245,11 @@
         var custom = document.getElementById('customAmount').value;
         var amount = custom ? parseInt(custom) : currentAmount;
         if (!amount || amount < 1) { alert('Please choose a donation amount'); return; }
-        window.location.href = 'https://get.haverim.org.il/p/payment?Ut0duaLNb2bUblC=&p=' + amount;
+        window.location.href = 'https://get.haverim.org.il/p/payment?ft4eEwqnRc5A68v=&p=' + amount;
     });
 
     document.getElementById('storyBtn').addEventListener('click', function() {
         var storyContent = document.getElementById('storyContent');
         var icon = document.getElementById('storyIcon');
         if (storyContent.classList.contains('hidden')) {
-            storyContent.classList.remove('hidden');
-            icon.classList.add('rotate-180');
-        } else {
-            storyContent.classList.add('hidden');
-            icon.classList.remove('rotate-180');
-        }
-    });
-    </script>
-</body>
-</html>
+            st
