@@ -166,11 +166,6 @@
                 <div class="p-8">
                     <div class="mb-6">
                         <label class="block text-slate-700 font-bold mb-3">Choose donation amount:</label>
-                        <div class="grid grid-cols-3 gap-3 mb-3">
-                            <button type="button" class="amount-btn" id="btn360">$360</button>
-                            <button type="button" class="amount-btn active" id="btn720">$720</button>
-                            <button type="button" class="amount-btn" id="btn1000">$1,000</button>
-                        </div>
                         <div class="relative">
                             <span class="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-500 font-bold">$</span>
                             <input type="number" id="customAmount" placeholder="Other amount" min="1" class="w-full border-2 border-slate-200 rounded-lg py-3 pl-10 pr-4 focus:outline-none transition">
@@ -202,7 +197,7 @@
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-envelope" style="color:#dc2626"></i>
-                    <span>haverim@haverim.org.il</span>
+                    <span>haverim at haverim.org.il</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <i class="fa-solid fa-globe" style="color:#dc2626"></i>
@@ -216,29 +211,10 @@
     </footer>
 
     <script type="module">
-    var currentAmount = 720;
-
-    function selectAmount(btn, amount) {
-        document.querySelectorAll('.amount-btn').forEach(function(b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        document.getElementById('customAmount').value = '';
-        currentAmount = amount;
-    }
-
-    document.getElementById('btn360').addEventListener('click', function() { selectAmount(this, 360); });
-    document.getElementById('btn720').addEventListener('click', function() { selectAmount(this, 720); });
-    document.getElementById('btn1000').addEventListener('click', function() { selectAmount(this, 1000); });
-
-    document.getElementById('customAmount').addEventListener('input', function() {
-        document.querySelectorAll('.amount-btn').forEach(function(b) { b.classList.remove('active'); });
-        currentAmount = parseInt(this.value) || 0;
-    });
-
     document.getElementById('payBtn').addEventListener('click', function() {
-        var custom = document.getElementById('customAmount').value;
-        var amount = custom ? parseInt(custom) : currentAmount;
-        if (!amount || amount < 1) { alert('Please choose a donation amount'); return; }
-        window.location.href = 'https://get.haverim.org.il/p/payment?Ut0duaLNb2bUblC=&p=' + amount;
+        var amount = parseInt(document.getElementById('customAmount').value);
+        if (!amount || amount < 1) { alert('Please enter a donation amount'); return; }
+        window.location.href = 'https://get.haverim.org.il/p/payment?ft4eEwqnRc5A68v=&p=' + amount;
     });
 
     document.getElementById('storyBtn').addEventListener('click', function() {
